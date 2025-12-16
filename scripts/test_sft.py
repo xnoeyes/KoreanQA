@@ -13,7 +13,6 @@ from datetime import datetime
 CURRENT_TEST_TYPE = "sft"
 
 def parse_cot_answer(answer: str) -> dict:
-    """CoT 답변을 파싱하여 think와 answer 부분을 분리"""
     result = {}
 
     # think 태그 추출
@@ -69,8 +68,6 @@ def init_config_manager_for_test(save_dir: str = "configs") -> ConfigManager:
 
 
 def main(cm: ConfigManager):
-    # 테스트 모드
-
     model_path = cm.system.adapter_dir if cm.model.full_finetune else cm.model.model_id
     model, tokenizer = FastLanguageModel.from_pretrained(
         model_name=model_path,
@@ -81,7 +78,6 @@ def main(cm: ConfigManager):
         trust_remote_code=True
     )
 
-    # padding token 설정
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
@@ -158,11 +154,9 @@ def main(cm: ConfigManager):
             "output": parsed_output
         })
 
-    # 결과 파일 저장
     save_dir_hash = hashlib.md5(cm.system.save_dir.encode()).hexdigest()[:8]  # 8자리만 사용
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
-    # 파일명에 해시 포함
     output_filename = f"test_results_{save_dir_hash}_{timestamp}.json"
     output_path = os.path.join(cm.system.test_result_dir, output_filename)
 
@@ -177,7 +171,6 @@ if __name__ == "__main__":
     parser.add_argument("--save_dir", type=str, required=True, help="Must be set to save the trained model.")
     args = parser.parse_args()
 
-    # 설정 관리자 초기화
     config_manager = init_config_manager_for_test(save_dir=args.save_dir)
     config_manager.update_config("sft", {"seed": config_manager.system.seed})
     init_hub_env(config_manager.system.hf_token)
