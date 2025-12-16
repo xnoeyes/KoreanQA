@@ -4,6 +4,7 @@
 ```
 이 리포지토리는 한국어 어문 규범 준수를 위한 RAG 기반 생성 모델 시스템 구축 workspace 입니다. 
 ```
+--- 
 
 ## Datasets
 
@@ -21,6 +22,8 @@
 
 
 규범 문헌은 조항 단위로 분할·전처리 후, 임베딩 및 FAISS 인덱스를 구축하여 검색에 활용합니다.
+
+---
 
 ##  Computing Environment & Hyperparameters
 
