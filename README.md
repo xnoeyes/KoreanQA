@@ -46,7 +46,7 @@
   <img src="images/Pipeline.png" width="650">
 </p
   
-### 5.1 Baseline vs 제안 모델
+### Baseline vs Our model
 
 | Models        | Exact Match | BLEURT | BERTScore | ROUGE-1 |
 |--------------|------------:|-------:|----------:|--------:|
