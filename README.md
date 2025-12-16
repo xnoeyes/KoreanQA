@@ -39,13 +39,11 @@
 | Scheduler     | Cosine decay                                       |
 
 ---
-
-## Experimental Results
-
 <p align="center">
   <img src="images/Pipeline.png" width="650">
-</p
+</p 
   
+## Experimental Results
 ### Baseline vs Our model
 
 | Models        | Exact Match | BLEURT | BERTScore | ROUGE-1 |
