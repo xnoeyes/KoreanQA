@@ -66,10 +66,8 @@
 | CoT    | **65.66**   | 55.12  | 71.75     | 34.83   |
 | DPO    | 65.26       | **55.88** | **78.22** | **40.82** |
 
+
 #### Preference Pair Generation Strategy
-
-DPO 학습에서는 `(chosen, rejected)` 형태의 **preference pair** 을 다음과 같이 구성한다.
-
 1. **Answer Embedding**  
    - 기준 정답을 문장 임베딩으로 변환
 
