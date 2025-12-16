@@ -42,14 +42,12 @@
 
 ## 5. Experimental Results
 
-### 5.1 Baseline vs RAG 적용 모델
+### 5.1 Baseline vs 제안 모델
 
 | Models        | Exact Match | BLEURT | BERTScore | ROUGE-1 |
 |--------------|------------:|-------:|----------:|--------:|
 | Baseline     | 53.92       | 54.72  | 72.92     | 45.53   |
-| RAG applied  | **66.86**   | **61.53** | **80.06** | **46.26** |
-
-**RAG 적용 효과**
+| Our  | **66.86**   | **61.53** | **80.06** | **46.26** |
 
 - Exact Match: **+12.94p**
 - BLEURT: **+6.81p**
@@ -57,7 +55,7 @@
   
 ---
 
-### 5.2 CoT vs DPO (RAG 기반 모델에 추가 적용)
+### 5.2 CoT vs DPO (추가 비교 실험)
 
 | Method | Exact Match | BLEURT | BERTScore | ROUGE-1 |
 |--------|------------:|-------:|----------:|--------:|
