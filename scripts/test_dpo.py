@@ -12,15 +12,6 @@ from datetime import datetime
 
 from peft import PeftModel
 
-"""
-
-기존의 sft 모델과 dpo 모델과 불러서 병합해야하는 작업 작성해야 함
-
-
-
-"""
-
-
 CURRENT_TEST_TYPE = "dpo"
 
 def init_config_manager_for_test(save_dir: str = "configs") -> ConfigManager:
