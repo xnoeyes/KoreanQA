@@ -40,10 +40,10 @@
 
 ---
 
-## 5. Experimental Results
+## Experimental Results
 
 <p align="center">
-  <img src="images/pipeline.png" width="650">
+  <img src="images/Pipeline.png" width="650">
 </p
   
 ### 5.1 Baseline vs 제안 모델
@@ -59,7 +59,7 @@
   
 ---
 
-### 5.2 CoT vs DPO (추가 비교 실험)
+### CoT vs DPO (추가 비교 실험)
 
 | Method | Exact Match | BLEURT | BERTScore | ROUGE-1 |
 |--------|------------:|-------:|----------:|--------:|
@@ -68,36 +68,37 @@
 
 #### Preference Pair Generation Strategy
 
-DPO 학습에서는 `(chosen, rejected)` 형태의 **선호 쌍(preference pair)** 을 다음과 같이 구성한다.
+DPO 학습에서는 `(chosen, rejected)` 형태의 **preference pair** 을 다음과 같이 구성한다.
 
 1. **Answer Embedding**  
-   - 기준 정답(gold answer)을 문장 임베딩으로 변환한다.
+   - 기준 정답을 문장 임베딩으로 변환
 
 2. **Similarity Search**  
-   - 정답 임베딩을 쿼리로 사용해 의미적으로 **유사한 응답 후보**를 검색한다.
+   - 정답 임베딩을 쿼리로 사용해 의미적으로 **유사한 응답 후보**를 검색
 
 3. **Rejected Sample Generation**  
-   - 유사하지만 규범 오류가 있거나 덜 선호되는 후보를 **rejected**로 구성한다.
+   - 유사하지만 규범 오류가 있거나 덜 선호되는 후보를 **rejected**로 구성
 
 <p align="center">
   <img src="images/dpo.png" width="650">
 </p
+  
 ---
 
 ## My Contributions
 
-- **System Design**
-  - 전체 파이프라인 설계
+- **LLM Fine-tuning & Optimization**
+  - Kakao **Kanana-1.5-8B-Instruct** 모델을 기반으로 LoRA/QLoRA 세팅 및 파라미터 최적화
+    
+- **Prompt Engineering**
+  - 문제 유형별 **맞춤형 프롬프트 템플릿 설계**
 
-- **Object Detection Training**
-  - 생활도로 객체인식 데이터셋 기반 YOLOv11s 학습 진행
-
-- **VLM Fine-tuning & Evaluation**
+- **Evaluation & Benchmarkingn**
   - Qwen2-VL-7B-Instruct 4bit 기반 VLM 학습 진행
 
 - **Web Demo Implementation**
-  - 데모 UI 구현 및 Backend 구축
-
+  - Baseline 대비 성능 향상폭 분석 및 Ablation Study 수행
+ 
 ---
 
 ## Achievements & Awards
