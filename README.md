@@ -89,11 +89,11 @@
 - **Prompt Engineering**
   - 문제 유형별 **맞춤형 프롬프트 템플릿 설계**
 
-- **Evaluation & Benchmarkingn**
-  - Qwen2-VL-7B-Instruct 4bit 기반 VLM 학습 진행
-
-- **Web Demo Implementation**
+- **Evaluation**
   - Baseline 대비 성능 향상폭 분석 및 Ablation Study 수행
+  - 
+- **Documentation & Publicationn**
+  - 연구 전 과정을 정리하여 논문화 진행
  
 ---
 
